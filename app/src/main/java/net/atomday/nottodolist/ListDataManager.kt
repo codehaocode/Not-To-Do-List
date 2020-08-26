@@ -1,6 +1,6 @@
 package net.atomday.nottodolist
-
-import android.preference.PreferenceManager
+import android.content.Context
+import androidx.preference.PreferenceManager
 
 class ListDataManager (private val context: Context) {
 
