@@ -6,8 +6,12 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var listsRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +22,12 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
+        listsRecyclerView = findViewById(R.id.lists_recyclerview)
+
+        listsRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        listsRecyclerView.adapter = ListSelectionRecyclerViewAdapter()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
