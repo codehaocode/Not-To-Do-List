@@ -1,5 +1,6 @@
 package net.atomday.nottodolist
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -75,6 +76,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         builder.create().show()
+    }
+
+    private fun showListDetail(list: TaskList) {
+
+        val listDetailIntent = Intent(this, ListDetailActivity::class.java)
+
+        listDetailIntent.putExtra(INTENT_LIST_KEY, list)
+
+        startActivity(listDetailIntent)
     }
 
 }
